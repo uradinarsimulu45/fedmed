@@ -1,0 +1,1 @@
+- [x] Day 1: Setup, data pipeline, dataset verified
