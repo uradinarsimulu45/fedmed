@@ -13,12 +13,9 @@
             entirely in future versions of Flower.
         
 [92mINFO [0m:      
-[92mINFO [0m:      Received: get_parameters message f5898b42-9507-4c5e-87d0-de0e3a2f9940
+[92mINFO [0m:      Received: train message ec1cec0f-f5fa-4060-8795-1041c428d535
+[Hospital 1] local loss 1.0000
 [92mINFO [0m:      Sent reply
 [92mINFO [0m:      
-[92mINFO [0m:      Received: train message 90bb379c-093d-4acf-9bee-ff81ab24f73d
-[Hospital 1] local loss 0.9267
-[92mINFO [0m:      Sent reply
-[92mINFO [0m:      
-[92mINFO [0m:      Received: reconnect message 23510591-114c-41d7-908f-84eae3461238
+[92mINFO [0m:      Received: reconnect message 6de6007a-62f2-4545-8c19-e8e4e902d4b2
 [92mINFO [0m:      Disconnect and shut down
