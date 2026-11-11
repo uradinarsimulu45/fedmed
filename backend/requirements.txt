@@ -4,3 +4,5 @@ numpy
 matplotlib
 pyyaml
 requests
+flwr>=1.8,<2
+flwr>=1.8,<2

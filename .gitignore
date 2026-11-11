@@ -11,4 +11,4 @@ backend/certs/
 node_modules/
 frontend/dist/
 .env
-.ipynb_checkpoints/
+.ipynb_checkpoints/backend/logs/
