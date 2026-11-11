@@ -9,7 +9,7 @@ from monai.transforms import (
     RandShiftIntensityd, SpatialPadd, MapTransform, EnsureTyped,
 )
 
-ROI = (96, 96, 96)
+ROI = (64, 64, 64)
 
 
 class ConvertMSDLabelsd(MapTransform):

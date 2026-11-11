@@ -3,3 +3,4 @@ monai[nibabel,tqdm]>=1.3
 numpy
 matplotlib
 pyyaml
+requests

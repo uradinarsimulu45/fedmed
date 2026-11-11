@@ -3,7 +3,7 @@ from monai.networks.nets import UNet
 from monai.networks.layers import Norm
 
 
-def build_model(in_channels=4, out_channels=3, channels=(16, 32, 64, 128, 256)):
+def build_model(in_channels=4, out_channels=3, channels=(8, 16, 32, 64, 128)):
     return UNet(
         spatial_dims=3,
         in_channels=in_channels,
