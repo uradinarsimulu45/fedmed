@@ -55,6 +55,20 @@
       "dice_wt": 0.2876,
       "dice_et": 0.08,
       "dice_mean": 0.159
+    },
+    {
+      "round": 9,
+      "dice_tc": 0.1349,
+      "dice_wt": 0.3401,
+      "dice_et": 0.1009,
+      "dice_mean": 0.192
+    },
+    {
+      "round": 10,
+      "dice_tc": 0.1411,
+      "dice_wt": 0.3407,
+      "dice_et": 0.1079,
+      "dice_mean": 0.1966
     }
   ]
 }
