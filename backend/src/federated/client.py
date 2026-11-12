@@ -61,10 +61,12 @@ def main():
     p.add_argument("--server", default="127.0.0.1:8080")
     p.add_argument("--local-epochs", type=int, default=1)
     p.add_argument("--max-train", type=int, default=60)
+    p.add_argument("--tls", action="store_true")
     a = p.parse_args()
     fl.client.start_client(
         server_address=a.server,
         client=HospitalClient(a.id, a.local_epochs, a.max_train).to_client(),
+        root_certificates=open("certs/ca.crt","rb").read() if a.tls else None,
     )
 
 

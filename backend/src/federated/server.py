@@ -49,6 +49,7 @@ def main():
     p.add_argument("--address", default="0.0.0.0:8080")
     p.add_argument("--max-val", type=int, default=12)
     p.add_argument("--out", default="results/federated_metrics.json")
+    p.add_argument("--tls", action="store_true")
     a = p.parse_args()
 
     _, val_files = get_partitions(max_val=a.max_val)
@@ -64,6 +65,7 @@ def main():
         server_address=a.address,
         config=fl.server.ServerConfig(num_rounds=a.rounds),
         strategy=strategy,
+        certificates=(open("certs/ca.crt","rb").read(), open("certs/server.pem","rb").read(), open("certs/server.key","rb").read()) if a.tls else None,
     )
 
 
