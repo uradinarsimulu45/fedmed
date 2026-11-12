@@ -1,0 +1,60 @@
+{
+  "history": [
+    {
+      "round": 1,
+      "dice_tc": 0.0219,
+      "dice_wt": 0.15,
+      "dice_et": 0.0289,
+      "dice_mean": 0.0669
+    },
+    {
+      "round": 2,
+      "dice_tc": 0.0286,
+      "dice_wt": 0.1956,
+      "dice_et": 0.0424,
+      "dice_mean": 0.0889
+    },
+    {
+      "round": 3,
+      "dice_tc": 0.033,
+      "dice_wt": 0.2359,
+      "dice_et": 0.0601,
+      "dice_mean": 0.1097
+    },
+    {
+      "round": 4,
+      "dice_tc": 0.0378,
+      "dice_wt": 0.2544,
+      "dice_et": 0.0657,
+      "dice_mean": 0.1193
+    },
+    {
+      "round": 5,
+      "dice_tc": 0.0431,
+      "dice_wt": 0.2712,
+      "dice_et": 0.0772,
+      "dice_mean": 0.1305
+    },
+    {
+      "round": 6,
+      "dice_tc": 0.0539,
+      "dice_wt": 0.3075,
+      "dice_et": 0.0886,
+      "dice_mean": 0.15
+    },
+    {
+      "round": 7,
+      "dice_tc": 0.0711,
+      "dice_wt": 0.2961,
+      "dice_et": 0.0899,
+      "dice_mean": 0.1524
+    },
+    {
+      "round": 8,
+      "dice_tc": 0.1095,
+      "dice_wt": 0.2876,
+      "dice_et": 0.08,
+      "dice_mean": 0.159
+    }
+  ]
+}
