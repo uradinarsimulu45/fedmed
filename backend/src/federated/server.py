@@ -50,20 +50,22 @@ def main():
     p.add_argument("--max-val", type=int, default=12)
     p.add_argument("--out", default="results/federated_metrics.json")
     p.add_argument("--tls", action="store_true")
+    p.add_argument("--timeout", type=float, default=600.0)
     a = p.parse_args()
 
     _, val_files = get_partitions(max_val=a.max_val)
     history = []
     strategy = fl.server.strategy.FedAvg(
         fraction_fit=1.0,
-        min_fit_clients=3,
+        min_fit_clients=2,
+        accept_failures=True,
         min_available_clients=3,
         fraction_evaluate=0.0,
         evaluate_fn=make_evaluate_fn(val_files, history, a.out),
     )
     fl.server.start_server(
         server_address=a.address,
-        config=fl.server.ServerConfig(num_rounds=a.rounds),
+        config=fl.server.ServerConfig(num_rounds=a.rounds, round_timeout=a.timeout),
         strategy=strategy,
         certificates=(open("certs/ca.crt","rb").read(), open("certs/server.pem","rb").read(), open("certs/server.key","rb").read()) if a.tls else None,
     )

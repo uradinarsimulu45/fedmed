@@ -22,7 +22,9 @@ def set_weights(model, weights):
 
 
 class HospitalClient(fl.client.NumPyClient):
-    def __init__(self, hospital_id, local_epochs, max_train):
+    def __init__(self, hospital_id, local_epochs, max_train, crash_at_round=0):
+        self.crash_at_round = crash_at_round
+        self.rounds_seen = 0
         shards, _ = get_partitions(max_train=max_train)
         self.files = shards[hospital_id]
         self.hospital_id = hospital_id
@@ -36,6 +38,10 @@ class HospitalClient(fl.client.NumPyClient):
         return get_weights(self.model)
 
     def fit(self, parameters, config):
+        self.rounds_seen += 1
+        if self.crash_at_round and self.rounds_seen == self.crash_at_round:
+            print(f"[Hospital {self.hospital_id}] simulated crash", flush=True)
+            import os; os._exit(1)
         set_weights(self.model, parameters)
         self.model.train()
         opt = torch.optim.AdamW(self.model.parameters(), lr=1e-3, weight_decay=1e-5)
@@ -62,10 +68,11 @@ def main():
     p.add_argument("--local-epochs", type=int, default=1)
     p.add_argument("--max-train", type=int, default=60)
     p.add_argument("--tls", action="store_true")
+    p.add_argument("--crash-at-round", type=int, default=0)
     a = p.parse_args()
     fl.client.start_client(
         server_address=a.server,
-        client=HospitalClient(a.id, a.local_epochs, a.max_train).to_client(),
+        client=HospitalClient(a.id, a.local_epochs, a.max_train, a.crash_at_round).to_client(),
         root_certificates=open("certs/ca.crt","rb").read() if a.tls else None,
     )
 
