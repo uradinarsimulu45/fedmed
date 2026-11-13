@@ -2,24 +2,52 @@
   "history": [
     {
       "round": 1,
-      "dice_tc": 0.021,
-      "dice_wt": 0.1158,
-      "dice_et": 0.0126,
-      "dice_mean": 0.0498
+      "dice_tc": 0.0723,
+      "dice_wt": 0.184,
+      "dice_et": 0.0133,
+      "dice_mean": 0.0899
     },
     {
       "round": 2,
-      "dice_tc": 0.0218,
-      "dice_wt": 0.1696,
-      "dice_et": 0.0142,
-      "dice_mean": 0.0685
+      "dice_tc": 0.0834,
+      "dice_wt": 0.2141,
+      "dice_et": 0.0164,
+      "dice_mean": 0.1046
     },
     {
       "round": 3,
-      "dice_tc": 0.024,
-      "dice_wt": 0.18,
-      "dice_et": 0.0156,
-      "dice_mean": 0.0732
+      "dice_tc": 0.0872,
+      "dice_wt": 0.2172,
+      "dice_et": 0.0196,
+      "dice_mean": 0.108
+    },
+    {
+      "round": 4,
+      "dice_tc": 0.1109,
+      "dice_wt": 0.2558,
+      "dice_et": 0.0258,
+      "dice_mean": 0.1308
+    },
+    {
+      "round": 5,
+      "dice_tc": 0.1274,
+      "dice_wt": 0.2853,
+      "dice_et": 0.0368,
+      "dice_mean": 0.1498
+    },
+    {
+      "round": 6,
+      "dice_tc": 0.1433,
+      "dice_wt": 0.3063,
+      "dice_et": 0.0524,
+      "dice_mean": 0.1673
+    },
+    {
+      "round": 7,
+      "dice_tc": 0.1346,
+      "dice_wt": 0.2921,
+      "dice_et": 0.0673,
+      "dice_mean": 0.1647
     }
   ]
 }
