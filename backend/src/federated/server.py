@@ -59,7 +59,7 @@ def main():
         fraction_fit=1.0,
         min_fit_clients=2,
         accept_failures=True,
-        min_available_clients=3,
+        min_available_clients=2,
         fraction_evaluate=0.0,
         evaluate_fn=make_evaluate_fn(val_files, history, a.out),
     )
