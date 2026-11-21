@@ -2,24 +2,24 @@
   "history": [
     {
       "round": 1,
-      "dice_tc": 0.0295,
-      "dice_wt": 0.0827,
-      "dice_et": 0.0102,
-      "dice_mean": 0.0408
+      "dice_tc": 0.0291,
+      "dice_wt": 0.0699,
+      "dice_et": 0.0169,
+      "dice_mean": 0.0386
     },
     {
       "round": 2,
-      "dice_tc": 0.0348,
-      "dice_wt": 0.1006,
-      "dice_et": 0.0131,
-      "dice_mean": 0.0495
+      "dice_tc": 0.032,
+      "dice_wt": 0.0915,
+      "dice_et": 0.0175,
+      "dice_mean": 0.047
     },
     {
       "round": 3,
-      "dice_tc": 0.0432,
-      "dice_wt": 0.1228,
-      "dice_et": 0.0196,
-      "dice_mean": 0.0618
+      "dice_tc": 0.039,
+      "dice_wt": 0.1155,
+      "dice_et": 0.0176,
+      "dice_mean": 0.0574
     }
   ]
 }
