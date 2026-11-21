@@ -13,6 +13,14 @@ from src.federated.partition import get_partitions
 from src.models.unet import build_model
 
 
+class WaitFedAvg(fl.server.strategy.FedAvg):
+    """Wait for all 3 hospitals before round 1; later rounds tolerate drops."""
+    def configure_fit(self, server_round, parameters, client_manager):
+        if server_round == 1:
+            client_manager.wait_for(3, timeout=120)
+        return super().configure_fit(server_round, parameters, client_manager)
+
+
 def make_evaluate_fn(val_files, history, out_path):
     model = build_model()
     loader = DataLoader(make_dataset(val_files, False), batch_size=1, num_workers=0)
@@ -55,7 +63,7 @@ def main():
 
     _, val_files = get_partitions(max_val=a.max_val)
     history = []
-    strategy = fl.server.strategy.FedAvg(
+    strategy = WaitFedAvg(
         fraction_fit=1.0,
         min_fit_clients=2,
         accept_failures=True,
