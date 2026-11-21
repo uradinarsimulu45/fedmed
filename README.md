@@ -23,6 +23,5 @@ flowchart LR
   S -->|"global model"| H2
   S -->|"metrics JSON"| D["React dashboard"]
 
-![FedMed architecture](docs/architecture.png)
 
 Roadmap: Week 3 adds TenSEAL homomorphic encryption and live WebSocket metrics. Week 4 adds differential privacy.
