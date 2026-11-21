@@ -13,7 +13,7 @@ split 20/20/20 across hospitals, shared 12-case validation set. Absolute Dice is
 because of the reduced scale; the federated-vs-centralized comparison is the point.
 ## Architecture
 
-```mermaid
+```![Architecture](docs/architecture.png)
 flowchart LR
   H0["Hospital 0 (20 private cases)"] -->|"weights only, gRPC + TLS"| S["Central server: FedAvg + evaluation"]
   H1["Hospital 1 (20 private cases)"] -->|"weights only, gRPC + TLS"| S
