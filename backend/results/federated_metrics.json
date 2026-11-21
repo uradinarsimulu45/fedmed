@@ -48,6 +48,62 @@
       "dice_wt": 0.2921,
       "dice_et": 0.0673,
       "dice_mean": 0.1647
+    },
+    {
+      "round": 8,
+      "dice_tc": 0.153,
+      "dice_wt": 0.3174,
+      "dice_et": 0.0801,
+      "dice_mean": 0.1835
+    },
+    {
+      "round": 9,
+      "dice_tc": 0.1663,
+      "dice_wt": 0.3369,
+      "dice_et": 0.0904,
+      "dice_mean": 0.1979
+    },
+    {
+      "round": 10,
+      "dice_tc": 0.1553,
+      "dice_wt": 0.3161,
+      "dice_et": 0.0899,
+      "dice_mean": 0.1871
+    },
+    {
+      "round": 11,
+      "dice_tc": 0.1759,
+      "dice_wt": 0.3498,
+      "dice_et": 0.1024,
+      "dice_mean": 0.2094
+    },
+    {
+      "round": 12,
+      "dice_tc": 0.1705,
+      "dice_wt": 0.344,
+      "dice_et": 0.1026,
+      "dice_mean": 0.2057
+    },
+    {
+      "round": 13,
+      "dice_tc": 0.1742,
+      "dice_wt": 0.345,
+      "dice_et": 0.1117,
+      "dice_mean": 0.2103
+    },
+    {
+      "round": 14,
+      "dice_tc": 0.2002,
+      "dice_wt": 0.3846,
+      "dice_et": 0.1251,
+      "dice_mean": 0.2366
+    },
+    {
+      "round": 15,
+      "dice_tc": 0.199,
+      "dice_wt": 0.386,
+      "dice_et": 0.1219,
+      "dice_mean": 0.2356
     }
   ]
 }
