@@ -2,18 +2,26 @@
   "history": [
     {
       "round": 1,
-      "dice_tc": 0.0266,
-      "dice_wt": 0.0606,
-      "dice_et": 0.0125,
-      "dice_mean": 0.0332,
+      "dice_tc": 0.0275,
+      "dice_wt": 0.0754,
+      "dice_et": 0.011,
+      "dice_mean": 0.038,
       "upload_mb_per_hospital": 98.6
     },
     {
       "round": 2,
-      "dice_tc": 0.0284,
-      "dice_wt": 0.0663,
-      "dice_et": 0.0139,
-      "dice_mean": 0.0362,
+      "dice_tc": 0.0371,
+      "dice_wt": 0.1195,
+      "dice_et": 0.0118,
+      "dice_mean": 0.0561,
+      "upload_mb_per_hospital": 98.6
+    },
+    {
+      "round": 3,
+      "dice_tc": 0.0472,
+      "dice_wt": 0.1555,
+      "dice_et": 0.0131,
+      "dice_mean": 0.0719,
       "upload_mb_per_hospital": 98.6
     }
   ]

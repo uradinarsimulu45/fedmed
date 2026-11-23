@@ -7,3 +7,5 @@ requests
 flwr>=1.8,<2
 flwr>=1.8,<2
 tenseal
+fastapi
+uvicorn[standard]
