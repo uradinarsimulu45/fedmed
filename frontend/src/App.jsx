@@ -26,6 +26,24 @@ function Chart({ data, xKey, lines }) {
     </ResponsiveContainer>
   );
 }
+function LiveFederated() {
+  const [data, setData] = useState({ plain: [], encrypted: [] });
+  const [status, setStatus] = useState("connecting...");
+  useEffect(() => {
+    const ws = new WebSocket("ws://localhost:8000/ws");
+    ws.onopen = () => setStatus("live");
+    ws.onclose = () => setStatus("disconnected (start the API)");
+    ws.onmessage = (e) => setData(JSON.parse(e.data));
+    return () => ws.close();
+  }, []);
+  return (
+    <>
+      <h2>Live encrypted federated training: {status}</h2>
+      <Chart data={data.encrypted} xKey="round"
+        lines={[{ key: "dice_mean", color: "#54a24b" }, { key: "dice_wt", color: "#f58518" }]} />
+    </>
+  );
+}
 
 export default function App() {
   const base = useJson("/baseline_audit_15epochs.json");
