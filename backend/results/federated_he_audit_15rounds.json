@@ -2,26 +2,42 @@
   "history": [
     {
       "round": 1,
-      "dice_tc": 0.0264,
-      "dice_wt": 0.0751,
-      "dice_et": 0.011,
-      "dice_mean": 0.0375,
+      "dice_tc": 0.0791,
+      "dice_wt": 0.1929,
+      "dice_et": 0.0442,
+      "dice_mean": 0.1054,
       "upload_mb_per_hospital": 98.6
     },
     {
       "round": 2,
-      "dice_tc": 0.0285,
-      "dice_wt": 0.0906,
-      "dice_et": 0.013,
-      "dice_mean": 0.044,
+      "dice_tc": 0.0877,
+      "dice_wt": 0.2164,
+      "dice_et": 0.0519,
+      "dice_mean": 0.1186,
       "upload_mb_per_hospital": 98.6
     },
     {
       "round": 3,
-      "dice_tc": 0.0314,
-      "dice_wt": 0.1046,
-      "dice_et": 0.0165,
-      "dice_mean": 0.0509,
+      "dice_tc": 0.0913,
+      "dice_wt": 0.221,
+      "dice_et": 0.0544,
+      "dice_mean": 0.1222,
+      "upload_mb_per_hospital": 98.6
+    },
+    {
+      "round": 4,
+      "dice_tc": 0.1201,
+      "dice_wt": 0.2674,
+      "dice_et": 0.0694,
+      "dice_mean": 0.1523,
+      "upload_mb_per_hospital": 98.6
+    },
+    {
+      "round": 5,
+      "dice_tc": 0.1166,
+      "dice_wt": 0.2628,
+      "dice_et": 0.0708,
+      "dice_mean": 0.1501,
       "upload_mb_per_hospital": 98.6
     }
   ]
