@@ -44,6 +44,28 @@ function LiveFederated() {
     </>
   );
 }
+function EncryptedVsPlain() {
+  const plain = useJson("/federated_audit_15rounds.json");
+  const enc = useJson("/federated_he_audit_15rounds.json");
+  if (!plain || !enc) return <p>Encrypted comparison data not found in frontend/public.</p>;
+  const n = Math.min(plain.history.length, enc.history.length);
+  const data = Array.from({ length: n }, (_, i) => ({
+    round: i + 1,
+    plain: plain.history[i].dice_mean,
+    encrypted: enc.history[i].dice_mean,
+  }));
+  return (
+    <>
+      <h2>Encrypted vs plain FedAvg (first {n} rounds)</h2>
+      <p>
+        Upload per hospital per round: plain 4.8 MB | encrypted{" "}
+        {enc.history[0].upload_mb_per_hospital} MB. Server holds no secret key.
+      </p>
+      <Chart data={data} xKey="round"
+        lines={[{ key: "plain", color: "#4c78a8" }, { key: "encrypted", color: "#e45756" }]} />
+    </>
+  );
+}
 
 export default function App() {
   const base = useJson("/baseline_audit_15epochs.json");
