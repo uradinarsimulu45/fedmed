@@ -89,6 +89,7 @@ def main():
     p.add_argument("--dp-noise", type=float, default=0.0)
     p.add_argument("--crash-at-round", type=int, default=0)
     a = p.parse_args()
+    torch.manual_seed(0)
     client = HospitalClient(a.id, a.local_epochs, a.max_train, a.crash_at_round)
     client.dp_clip, client.dp_noise = a.dp_clip, a.dp_noise
     fl.client.start_client(
