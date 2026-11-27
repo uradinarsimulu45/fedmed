@@ -1,0 +1,11 @@
+{
+  "history": [
+    {
+      "round": 1,
+      "dice_tc": 0.0253,
+      "dice_wt": 0.0828,
+      "dice_et": 0.0166,
+      "dice_mean": 0.0416
+    }
+  ]
+}
