@@ -1,3 +1,7 @@
+# FedMed: Cross-Silo Federated Learning for Brain Tumor Segmentation
+
+Privacy-preserving 3D U-Net training across 3 simulated hospitals using Flower, gRPC + TLS, TenSEAL (CKKS) and differential privacy, with a React dashboard.
+
 ## Mid-Project Audit
 
 | Check | Result |
@@ -11,6 +15,7 @@
 Setup: CPU-only, 64^3 patches, small 3D U-Net (8-128 channels), 60 MSD Task01 cases
 split 20/20/20 across hospitals, shared 12-case validation set. Absolute Dice is low
 because of the reduced scale; the federated-vs-centralized comparison is the point.
+
 ## Architecture
 
 ![Architecture](docs/architecture.png)
@@ -55,3 +60,27 @@ Each hospital clips its update to L2 norm 1.0 and adds Gaussian noise (std = noi
 - One run per setting on a barely trained model, so small Dice gaps are within run-to-run noise.
 - Clipping alone costs accuracy: updates have norm about 4.4 and are clipped to 1.0.
 - Encryption and DP were evaluated separately, not combined.
+
+Accuracy holds up to noise 0.02, drops at 0.05, and stalls at noise 4.0, where epsilon is about 1.2 per round. Strong privacy was not affordable at this scale.
+
+## How to run
+
+```bash
+cd backend && python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+mkdir -p data outputs && python -m src.data.download
+python -m src.train_baseline --epochs 15            # centralized baseline
+bash gen_certs.sh && bash run_fed.sh 15 60 1 --tls  # federated over TLS
+python -m src.privacy.gen_he_keys && bash run_fed_he.sh 5 60 1 --tls  # encrypted
+bash run_dp.sh 5 30 1.0 0.05                        # differential privacy
+python -m src.make_masks                            # tumor mask images
+python -m uvicorn src.api:app --port 8000           # live metrics API
+cd ../frontend && npm install && npm run dev        # dashboard
+```
+
+## Limitations (read before citing any number)
+- Small scale: CPU only, 64^3 patches, 60 cases, small 3D U-Net. Dice is far below published BraTS results.
+- Federated reached about 72% of the centralized baseline Dice.
+- Encryption: one shared key, plaintext random initial model, only 5 rounds compared (server ran out of memory at round 6).
+- Differential privacy: epsilon is a loose simple-composition bound; accuracy fell at noise 0.05 and learning stalled at noise 4.0. Strong privacy was not affordable at this scale. Encryption and DP were not combined.
+- Mask images come from the centralized baseline, not the federated model.
