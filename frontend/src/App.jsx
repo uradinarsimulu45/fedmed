@@ -126,6 +126,12 @@ export default function App() {
             <h2>Differential privacy trade-off</h2>
       <img src="/dp_tradeoff.png" alt="DP trade-off" style={{ maxWidth: "100%" }} />
       <p>Clip 1.0, 5 rounds. Epsilon is a loose upper bound.</p>
+      <h2>Tumor segmentation (centralized baseline model)</h2>
+<p>Left to right: MRI, true tumor, predicted tumor. Baseline Dice is about 0.3, so masks are rough.</p>
+{[0, 1, 2].map((i) => (
+  <img key={i} src={`/masks/case${i}.png`} alt={`case ${i}`} style={{ maxWidth: "100%" }} />
+))}
+      
     </div>
   );
 }
