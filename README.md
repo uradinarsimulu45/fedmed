@@ -34,3 +34,24 @@ Roadmap: Week 3 adds TenSEAL homomorphic encryption and live WebSocket metrics. 
 - The round-1 starting model is a plaintext random initialisation with no patient data.
 - Evaluation runs at the hospitals (they decrypt), not on the server.
 - Encrypted and plain runs differ in random seeds, so small Dice gaps are noise.
+
+## Differential Privacy (Week 4)
+
+Each hospital clips its update to L2 norm 1.0 and adds Gaussian noise (std = noise x clip) before sending.
+5 rounds, 30 cases, fixed seed, one run per setting.
+
+| Noise | Final mean Dice | Approx. epsilon per round | After 5 rounds |
+|---|---|---|---|
+| 0.0 | 0.0798 | no noise | - |
+| 0.005 | 0.0771 | 969.0 | 4844.8 |
+| 0.02 | 0.0762 | 242.2 | 1211.2 |
+| 0.05 | 0.0550 | 96.9 | 484.5 |
+| 0.2 | 0.0505 | 24.2 | 121.1 |
+| 1.0 | 0.0527 | 4.8 | 24.2 |
+| 4.0 | 0.0234 | 1.2 | 6.1 |
+
+**Caveats**
+- Epsilon uses the classic Gaussian bound with simple composition and delta = 1e-5. It is a loose upper bound, and the classic bound is only valid for epsilon per round of 1 or less.
+- One run per setting on a barely trained model, so small Dice gaps are within run-to-run noise.
+- Clipping alone costs accuracy: updates have norm about 4.4 and are clipped to 1.0.
+- Encryption and DP were evaluated separately, not combined.
