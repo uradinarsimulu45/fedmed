@@ -26,7 +26,6 @@ function Chart({ data, xKey, lines }) {
     </ResponsiveContainer>
   );
 }
-
 function LiveFederated() {
   const [data, setData] = useState({ plain: [], encrypted: [] });
   const [status, setStatus] = useState("connecting...");
@@ -124,6 +123,9 @@ export default function App() {
             ]} />
         </>
       )}
+            <h2>Differential privacy trade-off</h2>
+      <img src="/dp_tradeoff.png" alt="DP trade-off" style={{ maxWidth: "100%" }} />
+      <p>Clip 1.0, 5 rounds. Epsilon is a loose upper bound.</p>
     </div>
   );
 }
