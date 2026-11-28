@@ -86,3 +86,5 @@ cd ../frontend && npm install && npm run dev        # dashboard
 - Mask images come from the centralized baseline, not the federated model.
 
 **Live results demo:** https://YOUR-APP-NAME.streamlit.app
+
+**Live results demo:** https://fedmed.streamlit.app
