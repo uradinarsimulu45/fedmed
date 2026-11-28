@@ -84,3 +84,5 @@ cd ../frontend && npm install && npm run dev        # dashboard
 - Encryption: one shared key, plaintext random initial model, only 5 rounds compared (server ran out of memory at round 6).
 - Differential privacy: epsilon is a loose simple-composition bound; accuracy fell at noise 0.05 and learning stalled at noise 4.0. Strong privacy was not affordable at this scale. Encryption and DP were not combined.
 - Mask images come from the centralized baseline, not the federated model.
+
+**Live results demo:** https://YOUR-APP-NAME.streamlit.app
