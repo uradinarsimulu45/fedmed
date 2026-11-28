@@ -1,0 +1,39 @@
+{
+  "history": [
+    {
+      "round": 1,
+      "dice_tc": 0.0186,
+      "dice_wt": 0.0613,
+      "dice_et": 0.028,
+      "dice_mean": 0.036
+    },
+    {
+      "round": 2,
+      "dice_tc": 0.0238,
+      "dice_wt": 0.0794,
+      "dice_et": 0.0175,
+      "dice_mean": 0.0402
+    },
+    {
+      "round": 3,
+      "dice_tc": 0.0141,
+      "dice_wt": 0.0472,
+      "dice_et": 0.0059,
+      "dice_mean": 0.0224
+    },
+    {
+      "round": 4,
+      "dice_tc": 0.0156,
+      "dice_wt": 0.1246,
+      "dice_et": 0.0095,
+      "dice_mean": 0.0499
+    },
+    {
+      "round": 5,
+      "dice_tc": 0.0221,
+      "dice_wt": 0.1221,
+      "dice_et": 0.0139,
+      "dice_mean": 0.0527
+    }
+  ]
+}
