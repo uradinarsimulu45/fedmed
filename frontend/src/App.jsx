@@ -26,6 +26,7 @@ function Chart({ data, xKey, lines }) {
     </ResponsiveContainer>
   );
 }
+
 function LiveFederated() {
   const [data, setData] = useState({ plain: [], encrypted: [] });
   const [status, setStatus] = useState("connecting...");
